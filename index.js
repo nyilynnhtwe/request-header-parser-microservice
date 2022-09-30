@@ -8,12 +8,12 @@ app.use(cors({
 
 app.get("/",(req,res)=>
 {
-
+  res.sendFile(__dirname+"/dist/index.html");
 });
 
 app.get("/api/whoami",(req,res)=>
 {
-  let ip    = req.hostname;
+  let ip    = req.socket.remoteAddress;
   let lang  = req.headers["accept-language"];
   let user  = req.headers["user-agent"];
   res.json({ipaddress:ip,language:lang,software:user});
