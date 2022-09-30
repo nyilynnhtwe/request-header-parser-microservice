@@ -8,7 +8,8 @@ app.use(cors({
 
 app.get("/",(req,res)=>
 {
-  res.sendFile(__dirname+"/dist/index.html");
+  let htmlPath = __dirname+"/dist/index.html";
+  res.sendFile(htmlPath);
 });
 
 app.get("/api/whoami",(req,res)=>
